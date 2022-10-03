@@ -7,17 +7,30 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.eru.lovetest.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
+class HomeFragment (): Fragment() {
 
-class HomeFragment : Fragment() {
+    @Inject
+    lateinit var prefs: Prefs
 
 
     private lateinit var binding: FragmentHomeBinding
 
     private val viewModel: LoveViewModel by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        if (!prefs.isShown()){
+            findNavController().navigate(R.id.startFragment)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
