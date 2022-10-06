@@ -35,6 +35,4 @@ class Repository @Inject constructor(private val api: LoveApi){
         data.add(BoardModel("Cherishing love", "It is now no longer possible for you to cherish love", R.drawable.board_2))
         data.add(BoardModel("Have a breakup?", "We have made a correction for you, don't worry, maybe someone is waiting for you", R.drawable.board_3))
     }
-
-
 }

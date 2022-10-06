@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.eru.lovetest.databinding.FragmentHomeBinding
+import com.eru.lovetest.room.AppDatabase
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,6 +18,9 @@ class HomeFragment (): Fragment() {
 
     @Inject
     lateinit var prefs: Prefs
+
+    @Inject
+    lateinit var database: AppDatabase
 
 
     private lateinit var binding: FragmentHomeBinding
@@ -52,6 +55,7 @@ class HomeFragment (): Fragment() {
                 binding.firstEd.text.toString(),
                 binding.secondEd.text.toString()
             ).observe(viewLifecycleOwner, Observer {
+                database.loveDao().insert(it)
                 findNavController().navigate(R.id.resultFragment, Bundle().apply {
                     putString("firstName", it.firstName)
                     putString("secondName", it.secondName)

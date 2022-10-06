@@ -57,4 +57,12 @@ dependencies {
     kapt 'com.google.dagger:hilt-compiler:2.44'
 
     implementation 'me.relex:circleindicator:2.1.6'
+
+    implementation("androidx.room:room-runtime:2.4.3")
+    annotationProcessor("androidx.room:room-compiler:2.4.3")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:2.4.3")
+
+
 }

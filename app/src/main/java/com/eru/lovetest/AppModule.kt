@@ -3,6 +3,8 @@ package com.eru.lovetest
 import android.content.Context
 import android.content.SharedPreferences
 import com.eru.lovetest.model.LoveApi
+import com.eru.lovetest.room.AppDatabase
+import com.eru.lovetest.room.LoveDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,4 +29,7 @@ class AppModule {
     fun providePrefs(@ApplicationContext context: Context): SharedPreferences{
         return context.getSharedPreferences("settings", Context.MODE_PRIVATE)
     }
+
+    @Provides
+    fun provideDatabase(): AppDatabase = App.appDatabase
 }

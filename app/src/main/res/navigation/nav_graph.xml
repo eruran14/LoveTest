@@ -35,6 +35,11 @@
         app:destination="@id/boardFragment"
         />
     </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.eru.lovetest.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 
 
 </navigation>
