@@ -42,8 +42,8 @@ class BoardFragment : Fragment() {
     }
 
     private fun loadBoards(data: ArrayList<BoardModel>){
-        data.add(BoardModel("Have a good time", "You should take the time to help those who need you", R.drawable.board_1))
-        data.add(BoardModel("Cherishing love", "It is now no longer possible for you to cherish love", R.drawable.board_2))
-        data.add(BoardModel("Have a breakup?", "We have made a correction for you, don't worry, maybe someone is waiting for you", R.drawable.board_3))
+        data.add(BoardModel("Have a good time", "You should take the time to help those who need you", R.raw.book_lover))
+        data.add(BoardModel("Cherishing love", "It is now no longer possible for you to cherish love", R.raw.bunnies_lottie))
+        data.add(BoardModel("Have a breakup?", "We have made a correction for you, don't worry, maybe someone is waiting for you", R.raw.valentine_lottie))
     }
 }

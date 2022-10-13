@@ -19,7 +19,7 @@ class BoardAdapter (private val data: ArrayList<BoardModel>, private val navCont
         fun bind(position: Int){
             binding.textView.text = data[position].title
             binding.textView2.text = data[position].description
-            binding.imageView.setImageResource(data[position].image)
+            binding.animationView.setAnimation(data[position].animation)
 
             if (position == data.lastIndex){
                 binding.startBtn.visibility = View.VISIBLE
